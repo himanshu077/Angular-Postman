@@ -1,0 +1,41 @@
+.sidebar{
+    height: 100%;
+    background-image: linear-gradient(351deg, #ff8b0066, #6700ff4f);
+    width: 100%;
+    display: flex;
+}
+.col-md-12{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+
+}
+.fas {
+    font-size: 20px;
+    height: 63px;
+    margin-left: 27px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    align-content: center;
+    cursor: pointer;
+}
+
+.headings{
+    font-size: 12px;
+    display: -webkit-box;
+    /* display: flex; */
+    cursor: pointer;
+    margin-left: -39px;
+    margin-top: 5px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    -webkit-box-pack: center;
+    justify-content: space-between;
+    -webkit-box-align: center;
+}
