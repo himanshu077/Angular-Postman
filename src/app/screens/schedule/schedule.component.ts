@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./schedule.component.css']
 })
 export class ScheduleComponent implements OnInit {
-
+  fakeArray = new Array(12);
   constructor() { }
 
   ngOnInit() {

@@ -15,6 +15,27 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit() {
   }
+  toggleCollection(section: string) {
+    this.toggleSection.emit(section); // Emit the section name
+  }
+  toggleenv(section:string){
+    this.toggleSection.emit(section);
+  }
+  toggleapis(section:string){
+    this.toggleSection.emit(section);
+  }
+  mockserv(section:string){
+    this.toggleSection.emit(section);
+  }
+  monitor(section:string){
+    this.toggleSection.emit(section);
+  }
+  flow(section:string){
+    this.toggleSection.emit(section);
+  }
+  history(section:string){
+    this.toggleSection.emit(section);
+  }
 
 
 }
