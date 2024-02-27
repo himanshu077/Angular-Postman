@@ -13,6 +13,7 @@ import { SidebarComponent } from './common/sidebar/sidebar.component';
 import { HeaderComponent } from './common/header/header.component';
 import { CollectionsComponent } from './pages/collections/collections.component';
 import { AppRoutingModule } from './app-routing.module';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
 
 
 
@@ -35,6 +36,7 @@ import { AppRoutingModule } from './app-routing.module';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgxUiLoaderModule.forRoot({})
    
   ],
   providers: [ SharedService],

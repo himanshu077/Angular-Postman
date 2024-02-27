@@ -1,6 +1,6 @@
 .sidebar{
     height: 100%;
-    background-image: linear-gradient(351deg, #ff8b0066, #6700ff4f);
+    background-image: none;
     width: 100%;
     display: flex;
 }
