@@ -480,7 +480,7 @@ button.save-btn {
 }
 
 .response-body::-webkit-scrollbar-thumb {
-    background-color: #db66be; /* Thumb color */
+    background-color: #2986f1; /* Thumb color */
     border-radius: 1px; /* Rounded corners */
 }
 .maintabone{
@@ -524,6 +524,10 @@ button.save-btn {
     margin-bottom: 27px;
     align-content: center;
     justify-content: center;
+}
+.responceData{
+    font-weight: bold;
+    color: #004fbd;
 }
 
 
