@@ -42,7 +42,7 @@ export class SimpleHttpComponent {
   }
 
   ngOnInit() {
-    this.activeSection = 'collection' 
+   
     const storedUrls = localStorage.getItem("recentUrls");
     if (storedUrls) {
       this.recentUrls = JSON.parse(storedUrls);
@@ -101,6 +101,53 @@ export class SimpleHttpComponent {
   }
   removeBody(i: number, formArray: string) {
     this.custonFormArray(formArray).removeAt(i);
+  }
+  onSubmit() {
+    this.submitted = true;
+    if (this.addEditForm.invalid) {
+      return;
+    }
+
+    const url = this.addEditForm.value.url;
+    const method = this.addEditForm.value.method;
+    const body = this.addEditForm.value.jsonTextArea;
+
+    // Send the HTTP request
+    this.httpserviceService.sendRequest(url, method, body).subscribe(
+      (res) => {
+        // Store the last accessed API URL
+        const lastApiUrl = url;
+        localStorage.setItem("lastApiUrl", lastApiUrl);
+
+        // Retrieve recentUrls array from localStorage or initialize it to an empty array
+        let recentUrls = JSON.parse(localStorage.getItem("recentUrls")) || [];
+
+        // Check if the URL already exists in the recentUrls array
+        if (!recentUrls.includes(lastApiUrl)) {
+          // Push the last accessed API URL to the recentUrls array
+          recentUrls.push(lastApiUrl);
+          localStorage.setItem("recentUrls", JSON.stringify(recentUrls));
+          console.log("Recent URLs:", recentUrls);
+          window.location.reload()
+        } else {
+          console.log("URL already exists in recent URLs:", lastApiUrl);
+         
+        }
+
+        this.ngxLoader.start();
+
+        setTimeout(() => {
+          this.response = res;
+
+          this.ngxLoader.stop();
+        }, 500);
+      },
+      (error) => {
+        console.error("Error:", error);
+
+        this.ngxLoader.stop();
+      }
+    );
   }
   validation_messages = {
     url: [{ type: "required", message: "Please enter valid URL" }],
