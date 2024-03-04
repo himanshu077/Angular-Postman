@@ -42,6 +42,7 @@ export class SimpleHttpComponent {
   }
 
   ngOnInit() {
+    this.activeSection = 'collection' 
     const storedUrls = localStorage.getItem("recentUrls");
     if (storedUrls) {
       this.recentUrls = JSON.parse(storedUrls);
